@@ -1,12 +1,12 @@
-import Joi from "joi";
+import Joi from 'joi';
 
-import showValidationsError from "../../utils/display_validation_error.js";
+import showValidationsError from '../../utils/display_validation_error.js';
 
 export class TestValidator {
   static async createTest(req, res, next) {
     const schema = Joi.object({
-      firstName: Joi.string().trim().max(20),
-      lastName: Joi.string().trim().max(20),
+      name: Joi.string().trim().max(50),
+      // lastName: Joi.string().trim().max(20),
       email: Joi.string().trim().max(200),
       address: Joi.string().trim().max(60),
       ratePerHour: Joi.number(),
@@ -22,8 +22,8 @@ export class TestValidator {
 
   static async updateTest(req, res, next) {
     const schema = Joi.object({
-      firstName: Joi.string().trim().max(20),
-      lastName: Joi.string().trim().max(20),
+      name: Joi.string().trim().max(50),
+      // lastName: Joi.string().trim().max(20),
       email: Joi.string().trim().max(200),
       address: Joi.string().trim().max(60),
       ratePerHour: Joi.number(),
