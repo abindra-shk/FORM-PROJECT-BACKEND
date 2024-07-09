@@ -324,7 +324,7 @@ export class AuthController {
         uuid: uuid,
       });
 
-      await sendMail({
+      sendMail({
         user,
         subject: 'Password Reset Email',
         token: token,

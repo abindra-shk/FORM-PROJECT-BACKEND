@@ -32,7 +32,7 @@ export const sendMail = async ({ user, subject, token = null }) => {
       "We noticed that you requested to reset your password.If you did not request this password reset, please ignore this email. Your account security is important to us, and we take every measure to ensure your information remains safe";
     let PORT = process.env.PORT || 8000;
 
-    link = `http:127.0.0.1:${PORT}/api/account/password-reset/confirm/${user._id}/${token}`;
+    link = `http://127.0.0.1:5173/account/password-reset/confirm/${token}`;
     html = await ejs.renderFile(`${emailFileDir}/verification_email.ejs`, {
       title: subject,
       link: link,
